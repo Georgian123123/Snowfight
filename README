@@ -1,16 +1,42 @@
-In acest program am folosit mai multe functii precum :
-1.Functii de validare(pentru indici, pentru mutarea fiecaruia 
-si pentru verificarea faptului daca o celula este ocupata.
-2.Functia Round_Robin care-mi parcurge diagonalele in ordinea ceruta.
-3.Functia de calcul pentru colturile microbordurilor.
-4.Functia auxiliare precum:"player" ce uneste mai multe functii si 
-"afisare" care-mi afiseaza macrobordul.
-5.Functia de verificare pentru castigatorii microbordurilor
-si functia de verificare pentru castigatorul macrobordului.
-In main, am utilizat ordinea :
-i) Am verificat daca 0 este prima mutare;
-ii)Am verificat daca se repeta mutarea.
-iii)Am verificat daca indicii sunt valizi si celulele sunt goale.
-iiii)Am pus mutarile in board, am verificat daca se castiga microbordul,
-si in caz ca da, se pune valoarea in macrobord.Am afisat macrobordul, cine 
-castiga, apoi coeficientul de atentie.
+Mi-am definit o structura pentru fiecare celula din matricea mea, 
+care contine altutudinea, dimensiunea manuselor, si id-ul jucatorului
+care pica in ea.
+Mi-am definit o structura pentru fiecare jucator, 
+care contine hp-ul, stamina, coordonatele unde pica in matrice, 
+stamina si id-ul fiecarui jucator.
+Mi-am alocat o matrice de structuri si un vector de structuri.
+Matricea pentru matricea mea, si vectorul pentru jucatori.
+Am folosit urmatoarele functii :
+1.Player_kill - face fiecare camp din structura 0(il ucide).
+2.change_gloves - schimba manusiel cand unul dintre elfi castiga.
+3.tame_stamina - jucatorul care castiga lupta ia stamina celuilalt.
+4.Change_coords - schimba coordonatele pentru comannda MOVE
+5.Check_Player - verifica daca jucatorul este pe ghetar.
+6.Read_struct - citeste matricea de structuri, si vectorul
+si totodata introduce in campuri valorile din fisier.Inauntrul ei
+aloc o matrice suplimentara in care citesc datele, le copiez in matricea 
+initiala, iar apoi ii dau free la cea recent alocata.
+7.Elves fight - lupta elfilor.Verifica care are stamina mai mare, pentru 
+a vedea cine incepe lupta.Cu fiecare lovitura hp-ul inamicului scade.
+8.MOVE_COMMAND - muta jucatorul in functie de UDLR.Am gandit-o astfel :
+stringul UDLR este parcurs litera cu litera.Fiecare litera reprezinta o
+directie.Se verifica daca jucatorul mai este pe ghetar.Daca se ajunge intr-o
+casuta unde gaseste alt jucator, se lupta.
+9.Print_scoreboard - printeaza in fisier caracteristicile unui jucator:
+Wet/dry (in joc/afara), scorul acestuia.Aceste date sunt sortate in fucntie de :
+Afara sau in joc, scor , apoi lexicografic.
+10.Snostorm - numarul K este un numar pe 32 de biti care contine :
+x, y, dmg, raza.Aflu aceste numere prin operatii pe biti.
+Jucatorii care se afla pe discul descris de  raza si centru x, y
+primesc dmg.
+11.Meltdown - Raza scade cu o unitate.Aloc o matrice noua de R diminuat, 
+copiez elementele.Verific pentru daca jucatorii mai sunt sau nu
+pe ghetar, apoi dezaloc matricea mea veche.
+12.openin_file - deschid fisierul infile
+13.openout_file - deschid fisierul outfile
+14.dezalloc - functie de dezalocare a matricii.
+15.check_winner - verific daca exista un castigator.
+In main aloc memorie pentru matricea mea, citesc numarul de jucatori si raza, 
+si fiecare comanda pentru jucatori.Tin evidenta numarului de jucaotori ramasi pe harta
+(total_players), si, opresc citirea din fisier in momentul cand mai exista 
+un singur jucator pe harta.Daca vor exista mai multi, dezaloc matricea si opresc programul.

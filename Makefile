@@ -1,8 +1,4 @@
 build :
-	gcc -Wall -Wextra -std=c99 main.c -o gigel
-
-run: build
-	./gigel <in >out
-
-clean:
-	rm -r gigel
+	gcc -Wall -Wextra -std=c99 *.c -o snowfight
+clean :
+	rm -rf *.o
