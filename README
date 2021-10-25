@@ -1,0 +1,16 @@
+In acest program am folosit mai multe functii precum :
+1.Functii de validare(pentru indici, pentru mutarea fiecaruia 
+si pentru verificarea faptului daca o celula este ocupata.
+2.Functia Round_Robin care-mi parcurge diagonalele in ordinea ceruta.
+3.Functia de calcul pentru colturile microbordurilor.
+4.Functia auxiliare precum:"player" ce uneste mai multe functii si 
+"afisare" care-mi afiseaza macrobordul.
+5.Functia de verificare pentru castigatorii microbordurilor
+si functia de verificare pentru castigatorul macrobordului.
+In main, am utilizat ordinea :
+i) Am verificat daca 0 este prima mutare;
+ii)Am verificat daca se repeta mutarea.
+iii)Am verificat daca indicii sunt valizi si celulele sunt goale.
+iiii)Am pus mutarile in board, am verificat daca se castiga microbordul,
+si in caz ca da, se pune valoarea in macrobord.Am afisat macrobordul, cine 
+castiga, apoi coeficientul de atentie.
